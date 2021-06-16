@@ -290,7 +290,7 @@ void handle_pktshark_alert_msg(struct netlink_message *msg, int err){
 	if (state != STATE_RECEIVING)
 		goto out_free;
 	for (i=0; i < alert->entries; i++) {
-		printf("skb %08x at tracepoint %d at time %lld\n", alert->points[i].skb_tag, alert->points[i].tracepoint_id, alert->points[i].curtime);
+		fprintf(fp, "skb %08x at tracepoint %d at time %lld\n", alert->points[i].skb_tag, alert->points[i].tracepoint_id, alert->points[i].curtime);
 	}
 out_free:
 	free_netlink_msg(msg);
