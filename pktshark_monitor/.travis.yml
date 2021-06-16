@@ -1,0 +1,22 @@
+language: c
+dist: focal 
+arch:
+  - arm64
+  - amd64
+  - ppc64le
+compiler:
+  - clang
+  - gcc
+addons:
+  apt:
+    packages:
+      binutils-dev
+      libreadline-dev
+      libnl-3-dev
+      libnl-genl-3-dev
+      libpcap-dev
+
+script: ./autogen.sh && ./configure && make && make check 
+
+after_script: cat ./tests/rundropwatch.sh.log
+
