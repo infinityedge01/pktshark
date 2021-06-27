@@ -22,7 +22,7 @@ It is just a prototype.
 4. Install the kernel module `pktshark.ko`:
 
 	```bash
-	insmod pias.ko
+	insmod pktshark.ko
 	```
 
 	You can use command `dmesg | tail` to show the kernel module is installed and running.
